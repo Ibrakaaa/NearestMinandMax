@@ -1,37 +1,53 @@
+package Main;
 import java.util.Scanner;
+import java.util.Arrays;
+
 
 public class Main {
-    public static void main(String[] args) {
-        int a, b, n, total = 1, i, total1, total2;
 
+    public static void main(String[] args) {
+        int [] list = {4,5,8,9,-85,-96,-4,-63,-4,150,1};
+        int min = list[0];
+        int max = list[0];
 
         Scanner input = new Scanner(System.in);
-        System.out.print("");
-        a = input.nextInt();
-        System.out.print("");
-        b = input.nextInt();
-        System.out.print("");
-        n = input.nextInt();
+        System.out.println(Arrays.toString(list));
+        System.out.println("Lutfen Bir Sayi Giriniz: ");
+        int number = input.nextInt();
 
 
-        for (i = 1; i <= n; i++) {
-            if (a >= 0 && a <= 50) {
-                if (b >= 0 && b <= 50) {
-                    if (n >= 1 && n <= 15) {
-                        total = total * n;
-                        total1 = total * b;
-                        total2 = total1 + a;
+        Arrays.sort(list);
+        for (int i : list){
+            if(i<number){
+                min = i;
 
-                        System.out.print(total2 + " ");
-
-                    }
-                }
             }
-        }
+            if (i>number){
+                max = i;
+                break;
+            }
+
+        }   System.out.println("Girilen Sayidan Kucukk En Yakin Sayi: "+ min);
+            System.out.println("Girilen Sayidan Buyuk En Yakin Sayi: "+ max);
+
+
+
+
+
+
 
 
     }
 }
+
+
+
+
+
+
+
+
+
 
 
 
